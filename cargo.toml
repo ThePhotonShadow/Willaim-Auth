@@ -2,6 +2,7 @@
 name = "hello" # the name of the package
 version = "0.1.0"    # the current version, obeying semver
 authors = ["Pat pnkidd@gmail.com"]
+edition = "2018"
 
 [[bin]]
 name = "hello"
@@ -11,3 +12,5 @@ path = "src/hello.rs"
 sqlx = "0.3.5"
 tokio = { version = "0.2", features = ["macros"] }
 warp = "0.2"
+parking_lot = "0.10.0"
+serde = { version = "1.0", features = ["derive"] }
