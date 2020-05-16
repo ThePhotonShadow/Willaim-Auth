@@ -9,7 +9,7 @@ name = "hello"
 path = "src/hello.rs"
 
 [dependencies]
-sqlx = "0.3.5"
+sqlx = {version = "0.3.5", features = ["runtime-tokio", "mysql"]}
 tokio = { version = "0.2", features = ["macros"] }
 warp = "0.2"
 parking_lot = "0.10.0"

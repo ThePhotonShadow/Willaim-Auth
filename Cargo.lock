@@ -18,6 +18,7 @@ dependencies = [
  "async-std",
  "native-tls",
  "thiserror",
+ "tokio",
  "url",
 ]
 
@@ -848,6 +849,36 @@ dependencies = [
 ]
 
 [[package]]
+name = "num-bigint"
+version = "0.2.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "090c7f9998ee0ff65aa5b723e4009f7b217707f1fb5ea551329cc4d6231fb304"
+dependencies = [
+ "autocfg 1.0.0",
+ "num-integer",
+ "num-traits",
+]
+
+[[package]]
+name = "num-integer"
+version = "0.1.42"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3f6ea62e9d81a77cd3ee9a2a5b9b609447857f3d358704331e4ef39eb247fcba"
+dependencies = [
+ "autocfg 1.0.0",
+ "num-traits",
+]
+
+[[package]]
+name = "num-traits"
+version = "0.2.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c62be47e61d1842b9170f0fdeec8eba98e60e90e5446449a0545e5152acd7096"
+dependencies = [
+ "autocfg 1.0.0",
+]
+
+[[package]]
 name = "num_cpus"
 version = "1.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1353,6 +1384,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "sha2"
+version = "0.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "27044adfd2e1f077f649f59deb9490d3941d674002f7d062870a60ebe9bd47a0"
+dependencies = [
+ "block-buffer",
+ "digest",
+ "fake-simd",
+ "opaque-debug",
+]
+
+[[package]]
 name = "siphasher"
 version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1400,19 +1443,27 @@ dependencies = [
  "async-native-tls",
  "async-std",
  "async-stream",
+ "base64 0.12.1",
  "bitflags",
  "byteorder",
  "crossbeam-queue",
  "crossbeam-utils",
+ "digest",
  "futures-channel",
  "futures-core",
  "futures-util",
+ "generic-array",
  "hex",
  "libc",
  "log 0.4.8",
  "memchr",
+ "num-bigint",
  "percent-encoding",
+ "rand 0.7.3",
+ "sha-1",
+ "sha2",
  "sqlformat",
+ "tokio",
  "url",
 ]
 
@@ -1426,10 +1477,12 @@ dependencies = [
  "dotenv",
  "futures",
  "heck",
+ "lazy_static",
  "proc-macro2",
  "quote",
  "sqlx-core",
  "syn",
+ "tokio",
  "url",
 ]
 
@@ -1510,6 +1563,7 @@ dependencies = [
  "lazy_static",
  "memchr",
  "mio",
+ "num_cpus",
  "pin-project-lite",
  "slab",
  "tokio-macros",
