@@ -9,9 +9,8 @@ name = "hello"
 path = "src/hello.rs"
 
 [dependencies]
-sqlx = {version = "0.3.5", features = ["runtime-async-std", "mysql"]}
-tokio = { version = "0.2", features = ["macros"] }
+sqlx = {version = "0.3.5", features = ["runtime-tokio", "mysql"], default-features = false}
+tokio = {version = "0.2", features = ["macros"]}
 warp = "0.2"
 parking_lot = "0.10.0"
-serde = { version = "1.0", features = ["derive"] }
-async-std = {version = "1.0.0", features = ["attributes"]}
+serde = { version = "1.0", features = ["derive"]}
