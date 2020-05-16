@@ -6,3 +6,6 @@ authors = ["Pat pnkidd@gmail.com"]
 [[bin]]
 name = "hello"
 path = "src/hello.rs"
+
+[dependencies]
+sqlx = "0.3.5"
