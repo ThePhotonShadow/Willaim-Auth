@@ -11,16 +11,16 @@ use std::sync::Arc;
 // fn checkCredentials (username: &str, password: &str) {
 //
 // }
-async fn connect_db () -> Result<(), sqlx::Error>{
-    MySqlPool::builder()
+
+async fn connect_db<S: AsRef<str>>(db: S) -> Result<MySqlPool, sqlx::Error> {
+    Ok(MySqlPool::builder()
         .max_size(5) // maximum number of connections in the pool
-        .build("mysql://acore:acore@localhost").await?;
-    Ok(())
+        .build(db.as_ref()).await?)
 }
 
 #[tokio::main]
 async fn main () -> (){
-
+    let dbpool = connect_db("mysql://acore:acore@localhost");
     // GET /hello/warp => 200 OK with body "Hello, warp!"
     let hello = warp::path!("hello" / String)
         .map(|name| format!("Hello, {}!", name));
